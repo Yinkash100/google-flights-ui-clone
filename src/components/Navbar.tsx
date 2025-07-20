@@ -4,7 +4,7 @@ import {
     AirlineSeatIndividualSuite, Apps, ChatBubble, Check,
     DarkMode,
     Flight, HelpOutline,
-    House, Language, LightMode, LocalAtm, LocationOn,
+    Language, LightMode, LocalAtm, LocationOn,
     Luggage,
     Menu as MenuIcon, Settings, Timeline,
     TravelExplore

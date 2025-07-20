@@ -1,9 +1,9 @@
 import {Flight, LocationOn} from "@mui/icons-material";
-import {Dispatch, forwardRef, MouseEvent, SetStateAction, useEffect, useRef, useState} from "react";
+import {Dispatch, forwardRef, SetStateAction, useEffect, useState} from "react";
 import {useDebounce} from "../utils";
 import {SearchAirports} from "../apis/api.ts";
 import {useMutation} from "@tanstack/react-query";
-import {CircularProgress, Menu} from "@mui/material";
+import {CircularProgress} from "@mui/material";
 import type {AirportI} from "../interaces";
 
 interface AirportSearchPropsI {
@@ -24,7 +24,7 @@ const AirportSearch = forwardRef(({ setSelectedAirport }: AirportSearchPropsI, r
     if(debouncedValue && debouncedValue.length > 2){
       searchAirportsMutation.mutate(debouncedValue)
     }
-  }, [debouncedValue]);
+  }, [debouncedValue, searchAirportsMutation]);
 
   const searchAirportsMutation = useMutation({
     mutationFn: (query: string)=> SearchAirports(query),
