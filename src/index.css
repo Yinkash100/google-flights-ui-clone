@@ -1,0 +1,20 @@
+.body {
+    background-color: #FFF;
+}
+.font-display {
+    font-family: "Noto Sans Display", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /*font-size: 56px;*/
+    /*font-weight: 400;*/
+    /*letter-spacing: 0px;*/
+    /*line-height: 64px;*/
+    /*color: #202124;*/
+}
+
+.font-roboto {
+    font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 20px;
+    /*color: #70757a;*/
+}

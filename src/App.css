@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary: #1a73e8;
+    --color-primary-dark: #8ab4f8;
+    --color-bg-white: #fcfcfc;
+    --color-bg-dark: #202124;
+}
+
+a,button {
+    cursor: pointer;
+}
+.useful-tool-pointer {
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    transform: rotate(-135deg);
+}
