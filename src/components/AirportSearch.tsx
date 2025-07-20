@@ -10,21 +10,15 @@ interface AirportSearchPropsI {
   setSelectedAirport: Dispatch<SetStateAction<AirportI>>
 }
 
-const AirportSearch = forwardRef(({ setSelectedAirport }: AirportSearchPropsI, ref) => {
+const AirportSearch = forwardRef<HTMLInputElement, AirportSearchPropsI>(({ setSelectedAirport }, ref) => {
   const [inputValue, setInputValue] = useState('');
   const [debouncedValue, setDebouncedValue] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<AirportI[]>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
 
   const setDebounceVa = useDebounce((val)=>{
     setDebouncedValue(val)
   }, 1000)
-
-  useEffect(() => {
-    if(debouncedValue && debouncedValue.length > 2){
-      searchAirportsMutation.mutate(debouncedValue)
-    }
-  }, [debouncedValue, searchAirportsMutation]);
 
   const searchAirportsMutation = useMutation({
     mutationFn: (query: string)=> SearchAirports(query),
@@ -38,6 +32,13 @@ const AirportSearch = forwardRef(({ setSelectedAirport }: AirportSearchPropsI, r
     },
 
   })
+
+  useEffect(() => {
+    if(debouncedValue && debouncedValue.length > 2){
+      searchAirportsMutation.mutate(debouncedValue)
+    }
+  }, [debouncedValue, searchAirportsMutation]);
+
 
   const handleSelectAirport = (airport: AirportI) => {
     setSelectedAirport(airport)

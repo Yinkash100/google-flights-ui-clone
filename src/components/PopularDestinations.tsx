@@ -62,7 +62,7 @@ const PopularDestinations = () => {
   const scrollContainerRef = useRef(null);
 
   const scroll = (direction:string) => {
-    const container = scrollContainerRef.current;
+    const container = scrollContainerRef.current as HTMLDivElement;
     if (container) {
       const scrollAmount = 200;
       container.scrollBy({
@@ -90,7 +90,7 @@ const PopularDestinations = () => {
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm"
               aria-label="Scroll left"
             >
-              <ChevronLeft size={20}/>
+              <ChevronLeft />
             </button>
           )}
 

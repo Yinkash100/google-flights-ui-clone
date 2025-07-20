@@ -9,6 +9,7 @@ import {DateRangePicker} from "@mui/x-date-pickers-pro/DateRangePicker";
 import {MultiInputDateRangeField} from "@mui/x-date-pickers-pro/MultiInputDateRangeField";
 import {MouseEvent, useRef, useState} from "react";
 import type {AirportI, PassengerTypeI} from "../interaces";
+import {PickerRangeValue} from "@mui/x-date-pickers/internals";
 
 const FlightSearch = () => {
   const [tripType, setTripType] = useState('round-trip');
@@ -46,7 +47,7 @@ const FlightSearch = () => {
   const passengerCount = passengers.reduce((accumulator, currentValue) => accumulator + currentValue.number, 0)
   const [selectedLocation, setSelectedLocation] = useState<AirportI | null>();
   const [selectedDestination, setSelectedDestination] = useState<AirportI | null>();
-  const [dateRange, setDateRange] = useState<AirportI | null>();
+  const [dateRange, setDateRange] = useState<PickerRangeValue | null>();
   const locationInputRef = useRef<HTMLInputElement|null>(null);
 
   const canProceed = selectedLocation || selectedDestination

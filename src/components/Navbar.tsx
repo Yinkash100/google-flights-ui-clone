@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect, useContext} from 'react';
+import {MouseEvent, useState, useRef, useEffect, useContext} from 'react';
 import {LocalThemeContext} from "../context/themeContext.ts";
 import {
     AirlineSeatIndividualSuite, Apps, ChatBubble, Check,
@@ -104,8 +104,8 @@ const NavbarNew = ({ toggleTheme }: {toggleTheme: ()=>void}) => {
 
     // Close dropdown when clicking outside
     useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (appearanceRef.current && !appearanceRef.current.contains(event.target)) {
+        const handleClickOutside = (event: MouseEvent<HTMLDivElement>) => {
+            if (appearanceRef.current && !(appearanceRef.current as HTMLDivElement).contains(event.target)) {
                 setAppearanceOpen(false);
             }
         };

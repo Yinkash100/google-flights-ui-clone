@@ -58,7 +58,7 @@ const GoogleFlightsClone = () => {
                       <div
                         className="bg-center bg-no-repeat rounded-lg bg-size-cover rounded-lg cursor-pointer flex-1 hover:contrast-70"
                         role="button"
-                        tabIndex="0"
+                        tabIndex={0}
                         aria-label="Explore more destinations from Lagos"
                         style={{ backgroundImage: `url("${StaticBg}")`}}
                       />
